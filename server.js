@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser())
 
 //configuring database
-const  db = require("./database/db_confg")
+const  db = require("./database/db_config.js")
 db()
 
 
