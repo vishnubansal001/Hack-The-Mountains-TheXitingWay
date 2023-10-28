@@ -15,13 +15,13 @@ Hey Team HTM, Team The Xiting Way here,
 **DevLance is an Elite Devs Hub where elite devs and visionary clients sync up and collaborate all managed by Open Source Devs Community**
 
 *IMP*
-**This Platform is hosted at : **
+**This Platform is hosted at : *https://devlance-by-the-xiting-way.onrender.com/*
 
 
 **IMP Steps when running locally**
 1. write npm i (make sure you have nodejs)
 2. write node app.js to run the app on localhost:3000
-3. When running DevLance on local environment email verification link will be of   so please update it with localhost:3000 to use locally
+3. When running DevLance on local environment email verification link will be of https://devlance-by-the-xiting-way.onrender.com/ so please update it with localhost:3000 to use locally
 
 **We made this with ❤️ for Hack The Mountains **
 
