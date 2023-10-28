@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/styles/register.css">
 </head>
 
 <body style="background-image: url(assets/images/banner-bg.jpg);">
-    <div style="display: flex; justify-content: center; align-items: center; margin-top: 120px;">
-        <form method="post" action="/login">
-            <div >
-                <p>Login to your Account</p>
-                <span>Log In to DevLance, an elite developer's freelance platform for the elite
+    <div class="con" style="display: flex; justify-content: center; align-items: center; margin-top: 120px;">
+        <form class="form_container" method="post" action="/login">
+            <div class="title_container">
+                <p class="title">Login to your Account</p>
+                <span class="subtitle">Log In to DevLance, an elite developer's freelance platform for the elite
                     ones.</span>
             </div>
             <br>
-            <div>
-                <label for="email_field">Email</label>
+            <div class="input_container">
+                <label class="input_label" for="email_field">Email</label>
                 <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"
                     class="icon">
                     <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#141B34"
@@ -29,8 +30,8 @@
                 <input placeholder="name@mail.com" title="Inpit title" name="email" type="text" class="input_field"
                     id="email_field">
             </div>
-            <div >
-                <label for="password_field">Password</label>
+            <div class="input_container">
+                <label class="input_label" for="password_field">Password</label>
                 <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"
                     class="icon">
                     <path stroke-linecap="round" stroke-width="1.5" stroke="#141B34"
@@ -45,7 +46,7 @@
                 <input placeholder="Password" title="Input title" name="password" type="password" class="input_field"
                     id="password_field">
             </div>
-            <button title="Sign In" type="submit">
+            <button title="Sign In" type="submit" class="sign-in_btn">
                 <span>Sign In</span>
             </button>
             <p>Not registered ? <a href="/register" style="text-decoration: none;"><span
