@@ -55,6 +55,17 @@
 
             </div>
             <div class="flex flex-shrink-0 items-center ml-auto">
+                <div class="hidden md:flex md:flex-col md:items-end md:leading-tight">
+                    <span class="font-semibold">
+                        <%= the_user.email %>
+                    </span>
+                    <span class="text-sm text-gray-600">
+                        <%= the_user.git_profile.username %>
+                    </span>
+                </div>
+                <span class="h-12 w-12 ml-2 sm:ml-3 mr-2 bg-gray-100 rounded-full overflow-hidden">
+                    <img src=<%=the_user.git_profile.img %> alt="user profile photo" class="h-full w-full object-cover">
+                </span>
 
                 <div class="border-l pl-3 ml-3 space-x-1">
                     <a href="/logout">
@@ -74,6 +85,8 @@
         <main class="p-6 sm:p-10 space-y-6">
             <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
                 <div class="mr-6">
+                    <h1 class="text-4xl font-semibold mb-2">Hey! <%= the_user.git_profile.username %>
+                    </h1>
                     <h2 class="text-gray-600 ml-0.5">Developer Profile</h2>
                 </div>
                 <div class="flex flex-wrap items-start justify-end -mb-3">
@@ -91,6 +104,9 @@
                         </svg>
                     </div>
                     <div>
+                        <span class="block text-2xl font-bold">
+                            <%= the_user.git_profile.contributions_all %>
+                        </span>
                         <span class="block text-gray-500">Total Open Source Contributions</span>
                     </div>
                 </div>
@@ -107,6 +123,9 @@
                         </svg>
                     </div>
                     <div>
+                        <span class="block text-2xl font-bold">
+                            <%= the_user.git_profile.totalContributions %>
+                        </span>
                         <span class="block text-gray-500">Total Pushed Repos</span>
                     </div>
                 </div>
@@ -136,6 +155,9 @@
                         </svg>
                     </div>
                     <div>
+                        <span class="block text-2xl font-bold">
+                            <%= the_user.git_profile.location %>
+                        </span>
                         <span class="block text-gray-500">Location</span>
                     </div>
                 </div>
@@ -160,9 +182,35 @@
                         </svg>
                     </div>
                     <div>
+                        <span class="block text-2xl font-bold">
+                            <%= the_user.git_profile.followers %>
+                        </span>
                         <span class="block text-gray-500">GitHub Followers</span>
                     </div>
                 </div>
+                <!-- <div class="flex items-center p-8 bg-white shadow rounded-lg">
+                <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-red-600 bg-red-100 rounded-full mr-6">
+                  <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="inline-block text-2xl font-bold">9</span>
+                  <span class="inline-block text-xl text-gray-500 font-semibold">(14%)</span>
+                  <span class="block text-gray-500">Underperforming students</span>
+                </div>
+              </div>
+              <div class="flex items-center p-8 bg-white shadow rounded-lg">
+                <div class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6">
+                  <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="block text-2xl font-bold">83%</span>
+                  <span class="block text-gray-500">Finished homeworks</span>
+                </div>
+              </div> -->
             </section>
             <section class="w-full">
 
@@ -171,6 +219,20 @@
                 <div class="row-span-3 bg-white shadow rounded-lg">
                     <div class="flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100">
                         <span>Recent Github Contribution History</span>
+
+
+                        <!-- Refer here for full dropdown menu code: https://tailwindui.com/components/application-ui/elements/dropdowns -->
+                    </div>
+                    <div class="overflow-y-auto" style="max-height: 24rem;">
+                        <ul class="p-6 space-y-6">
+                            <%for(var i=0;i<the_user.git_profile.totalContributions;i++){%>
+                                <li class="flex items-center">
+                                    <span class="text-gray-600">
+                                        <%= the_user.git_profile.contributions[i].repo %>
+                                    </span>
+                                </li>
+                                <%}%>
+                        </ul>
                     </div>
                 </div>
 
